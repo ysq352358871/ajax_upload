@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="ajax_upload.js"></script>
+		<style>
+			.wrap{
+				width: 200px;height: 200px;
+				border: 1px solid #ccc;
+				position: relative;
+			}
+			.box{
+				position: absolute;
+				bottom:0;left:0;
+				width:0%;height: 15px;
+				background-color: red;
+			}
+			.wrap img{
+				width: 100%;height: 185px;
+				border:none;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var newinput=new upload("upload.php","input",".box","img");
+				newinput.up(function(e){
+					console.log(e);
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<input type="file" name="file" value="" multiple="multiple"/>
+		<div class="wrap">
+			<img src="" alt="" />
+			<div class="box"></div>
+		</div>
+	</body>
+</html>
